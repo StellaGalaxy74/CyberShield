@@ -1,0 +1,296 @@
+/* ==========================================================================
+   CyberShield AI - Dedicated Print Stylesheet
+   Generates a clean, crisp, printer-friendly forensic investigation report.
+   ========================================================================== */
+
+/* By default on screen, print-only elements are completely hidden */
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
+@media print {
+  /* Page geometry & paper margins */
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 15mm 12mm;
+  }
+
+  /* Force clean white background and dark text for paper */
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html,
+  body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #0f172a !important;
+    font-size: 10.5pt !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide all interactive chrome, navigation, headers, footers, buttons */
+  header,
+  footer,
+  nav,
+  button,
+  .no-print,
+  .print\:hidden,
+  [role="dialog"],
+  .modal-backdrop {
+    display: none !important;
+  }
+
+  /* Show dedicated print header & print footer */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Ensure the report container uses 100% width without viewport truncation */
+  #root,
+  #root > div,
+  .min-h-screen,
+  main,
+  #investigation-report-view {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+  }
+
+  #investigation-report-view,
+  #investigation-report-view * {
+    overflow: visible !important;
+  }
+
+  /* Suppress decorative glows, gradients, and blurs */
+  .cyber-grid-bg,
+  .cyber-glow-cyan,
+  .cyber-glow-red,
+  .cyber-glow-amber,
+  .cyber-glow-emerald,
+  .blur-3xl,
+  .blur-2xl,
+  .animate-pulse,
+  .animate-fade-in {
+    background-image: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+    filter: none !important;
+  }
+
+  /* Turn dark slate container cards into clean bordered paper panels */
+  .bg-slate-900,
+  .bg-slate-900\/80,
+  .bg-slate-900\/85,
+  .bg-slate-900\/60,
+  .bg-slate-950,
+  .bg-slate-950\/80,
+  .bg-slate-950\/70,
+  .bg-slate-950\/60,
+  .bg-slate-950\/50,
+  .bg-slate-800,
+  .bg-slate-800\/80,
+  .bg-slate-800\/60 {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+
+  /* Borders */
+  .border-slate-800,
+  .border-slate-800\/80,
+  .border-slate-800\/90,
+  .border-slate-800\/60,
+  .border-slate-700,
+  .border-indigo-900\/60,
+  .border-indigo-900\/80,
+  .border-cyan-950\/60 {
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Card rounding & padding for paper */
+  .rounded-2xl,
+  .rounded-xl {
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Avoid awkward page splits inside report sections */
+  #investigation-risk-score-card,
+  .red-flag-card,
+  #investigation-evidence-panel,
+  #url-inspection-card,
+  #recommended-actions-card,
+  #india-cybercrime-guidance,
+  #otp-golden-rule-banner,
+  .avoid-break,
+  li,
+  tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* High-contrast ink text adjustments */
+  .text-white,
+  .text-slate-100,
+  .text-slate-200,
+  .text-slate-300 {
+    color: #0f172a !important;
+  }
+
+  .text-slate-400,
+  .text-slate-500 {
+    color: #475569 !important;
+  }
+
+  /* Risk & indicator text colors (high-contrast printing) */
+  .text-rose-400,
+  .text-rose-500,
+  .text-rose-300 {
+    color: #b91c1c !important;
+  }
+
+  .text-amber-400,
+  .text-amber-500,
+  .text-amber-300 {
+    color: #b45309 !important;
+  }
+
+  .text-yellow-400,
+  .text-yellow-500,
+  .text-yellow-300 {
+    color: #854d0e !important;
+  }
+
+  .text-emerald-400,
+  .text-emerald-500,
+  .text-emerald-300 {
+    color: #047857 !important;
+  }
+
+  .text-cyan-400,
+  .text-cyan-300,
+  .text-cyan-200 {
+    color: #0369a1 !important;
+  }
+
+  .text-indigo-400,
+  .text-indigo-300 {
+    color: #4338ca !important;
+  }
+
+  .text-purple-400,
+  .text-purple-300,
+  .text-purple-200 {
+    color: #6b21a8 !important;
+  }
+
+  .text-blue-400,
+  .text-blue-300,
+  .text-blue-200 {
+    color: #1d4ed8 !important;
+  }
+
+  /* High contrast badge backgrounds */
+  .bg-rose-950,
+  .bg-rose-950\/70,
+  .bg-rose-950\/40,
+  .bg-rose-500\/10 {
+    background-color: #fef2f2 !important;
+    border: 1px solid #fca5a5 !important;
+    color: #991b1b !important;
+  }
+
+  .bg-amber-950,
+  .bg-amber-950\/70,
+  .bg-amber-950\/40,
+  .bg-amber-500\/10 {
+    background-color: #fffbeb !important;
+    border: 1px solid #fcd34d !important;
+    color: #92400e !important;
+  }
+
+  .bg-yellow-950,
+  .bg-yellow-500\/10 {
+    background-color: #fefce8 !important;
+    border: 1px solid #fde047 !important;
+    color: #854d0e !important;
+  }
+
+  .bg-emerald-950,
+  .bg-emerald-950\/40,
+  .bg-emerald-500\/10 {
+    background-color: #f0fdf4 !important;
+    border: 1px solid #86efac !important;
+    color: #166534 !important;
+  }
+
+  .bg-cyan-950,
+  .bg-indigo-950,
+  .bg-indigo-950\/70 {
+    background-color: #f0f9ff !important;
+    border: 1px solid #bae6fd !important;
+    color: #075985 !important;
+  }
+
+  /* OTP Banner on Paper */
+  #otp-golden-rule-banner {
+    background: #fef2f2 !important;
+    border: 2px solid #ef4444 !important;
+    color: #7f1d1d !important;
+  }
+
+  #otp-golden-rule-banner * {
+    color: #7f1d1d !important;
+  }
+
+  /* Prevent text truncation in print so full URLs & snippets are readable */
+  .truncate {
+    text-overflow: clip !important;
+    white-space: normal !important;
+    word-break: break-all !important;
+  }
+
+  /* Force all evidence groups to expand in print */
+  .print\:block {
+    display: block !important;
+  }
+
+  /* SVG Radial Guage readable on white paper */
+  svg circle.text-slate-800 {
+    stroke: #e2e8f0 !important;
+  }
+
+  /* Clean table borders */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #cbd5e1 !important;
+    padding: 6px 8px !important;
+  }
+
+  th {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+    font-weight: bold !important;
+  }
+}

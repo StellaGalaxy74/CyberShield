@@ -1,0 +1,6 @@
+{
+  "name": "CyberShield AI — Cyber Scam Investigator & Detector",
+  "description": "AI-powered cyber scam investigator and fraud detection platform with explainable indicators, multimodal screenshot OCR, URL inspection, and actionable safety guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
